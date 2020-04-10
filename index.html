@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+<style>
+
+body {margin:0}
+.sidebar {
+  height: 100%;
+  width: 150px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 16px;
+}
+.vertical-center {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-bar {
+  width: 70px;
+  background-color: #1a162f;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 18px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+.responsive{
+	width: 100%;
+}
+
+.actives {
+  background-color: #3e91e0;
+}
+.profile{
+	width: 50px;
+	position: relative;
+	left: 10px;
+}
+.main {
+  margin-left: 80px; 
+  padding: 10px 10px;
+}
+.container{
+	position: relative;
+	top: 50px;
+}
+
+
+/* 
+  reset the list elements first (normalize)
+*/
+
+ul, li {
+  margin:0;
+  padding: 0;
+  
+}
+span::first-letter{
+    text-transform: capitalize;
+}
+h5{
+	font-weight: bold;
+}
+
+.base-timeline {
+    list-style-type: none;
+    counter-reset: number; /* number 2021*/
+    position: relative;
+    display: block;
+    z-index: 2;
+    width: 90%; /* change or remove*/
+  
+}
+
+.base-timeline::before {
+      content: '';
+      width: 100%;
+      border-top: 6px solid steelblue;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      z-index: -1;
+
+}
+
+.bld{
+	font-weight: bold;
+}
+.h-c h5{
+	text-align: center;
+}
+
+.col-lg-3 p{
+   position: relative;
+   left: -40px;
+}
+button a{
+	color: blue;
+}
+
+.base-timeline__item {
+      position: relative;
+      display: inline-block;
+      width: calc(100% / 3 - 15px); /* change width */
+}
+
+.base-timeline__item::before {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        counter-increment: number; /* number -1*/
+        content: counter(number) ''; 
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: steelblue;
+        color: white;
+        font-weight: bold;
+        transition: all 0.6s ease-in-out;
+        box-sizing: border-box;
+        
+}
+
+/* modifier with use of the data-year attribute */
+.base-timeline__item--data::before {
+  content: attr(data-year);
+  width: 50px;
+  height: 50px;
+}
+
+/* hover element */
+.base-timeline__item:hover::before {
+     background-color: rgba( 225, 114, 114, .9);
+     transform: scale(1);
+      
+}
+
+.base-timeline__item--active::before {
+      background-color: rgb(70, 130, 180)
+      border: 2px solid;
+      border-color: rgba( 0, 0, 0, .3);
+      
+      
+}
+
+.base-timeline__item:last-child {
+      width: 0px;
+}
+
+/* summary text is optional and can be anything */
+
+.base-timeline__summary-text {
+      position: absolute;
+      bottom: -2em; 
+      left: -15px;
+    }
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="sidebar icon-bar">
+  <a href="#"><i class="fa fa-bars"></i></a> 	
+  <a class="actives" href="#"><i class="fa fa-home"></i></a> 
+  <a href="#"><i class="fa fa-graduation-cap"></i></a> 
+  <a href="#"><i class="fa fa-leanpub"></i></a> 
+  <a href="#"><i class="fa fa-file-text"></i></a> 
+  <a href="#"><i class="fa fa-comments-o"></i></a> 
+  <a href="#"><i class="fa fa-trophy"></i></a> 
+  <a href="#"><i class="fa fa-buysellads"></i></a><br><br>
+  <a href="#"><i class="fa fa-send"></i></a> 
+  <a href="#"><i class="fa fa-bell"></i></a> 
+  <img src="img/avt.webp" class="profile" alt="">
+</div>
+
+<div class="main">
+  <h2>Mock Interview</h2>
+  <div class="container">
+  	<div class="row">
+  	<div class="col-lg-6">
+  		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  		<div class="vertical-center">
+  		 <button class="btn btn-default">Apply</button>
+  	    </div>
+  		
+  	</div>
+  	<div class="col-lg-6">
+  			<img src="img/Interview.png" class="responsive" alt="">
+  	</div>
+  	<div class="col-lg-12">
+  		<h3 class="bld">Status</h3>
+        <br><br>
+        <div class="row">
+        	<div class="col-lg-4 h-c">
+        		<h5>On Queue</h5>
+        	</div>
+        	<div class="col-lg-4 ">
+        		<h5>Payment Confirmation</h5>
+        	</div>
+        	<div class="col-lg-4">
+        		<h5>Evaluation Form</h5>
+        	</div>
+        </div>
+
+		<ul class="base-timeline">
+		  <li class="base-timeline__item">
+		    <span class="base-timeline__summary-text"></span></li>
+		  <li class="base-timeline__item 
+		             base-timeline__item--active">
+		    <span class="base-timeline__summary-text"></span></li>
+		  <li class="base-timeline__item">
+		    <span class="base-timeline__summary-text"></span></li>
+		  <li class="base-timeline__item">
+		    <span class="base-timeline__summary-text"></span></li>
+		</ul><br>
+		  <div class="col-lg-3">
+		  	<p>Applied on 21 march 2020 03:20pm</p>
+		  </div>
+		   <div class="col-lg-4">
+		  	<p>Scheduled on 21 march 2020 03:20pm</p>
+		  </div>
+			<br>
+			  	</div>
+			  	<div class="col-lg-3"></div>
+			  	<div class="col-lg-5">
+				  	<button class="btn btn-default btn-block"><a>PAY & CONFIRM YOUR INTERVIEW</a></button>
+					<button class="btn btn-default btn-block"><a>DOWNLOAD EVALUATION FORM</a></button>
+			    </div>
+			  	</div>
+			  	<br>
+			  </div>
+			</div>
+     
+</body>
+</html> 
